@@ -29,12 +29,12 @@ public class App implements Callable<Integer> {
 	public static void main(String[] args) {
 		CommandLine commandLine = new CommandLine(new App());
 		commandLine.execute(args);
-
-		System.out.println("Hello, World!");
 	}
 
 	@Override
 	public Integer call() throws Exception {
+		String result = Differ.generate(firstFilePath, secondFilePath);
+		System.out.println(result);
 		return 0;
 	}
 }
